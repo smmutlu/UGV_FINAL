@@ -1068,9 +1068,9 @@ void process_data(char id,char *data)
 		ARMResetRoutine();
 		break;
 	case 'K':
-		XGpio_DiscreteWrite(&GpioA, 1, PIN_LIDAR_EN);//Pull low to start measure
+		XGpio_DiscreteWrite(&GpioA, 1, PIN_LIDAR_EN);//Pin Idles High
 		usleep(100);
-		XGpio_DiscreteWrite(&GpioA, 1, PIN_LIDAR_EN);//leave high
+		XGpio_DiscreteWrite(&GpioA, 1, PIN_LIDAR_EN);//Pin Idles High
 		pulse = PWM_MEASURE_mReadReg(PULSE_MEASURE_BASE_ADDRESS,12)*0.001; //REad Lidar Data and convert to cm
 		hold = pulse;
 		if (hold >100 && hold <200)

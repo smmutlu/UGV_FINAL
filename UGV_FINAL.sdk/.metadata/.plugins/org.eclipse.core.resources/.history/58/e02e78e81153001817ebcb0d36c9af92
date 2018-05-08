@@ -10,7 +10,6 @@
 #include "Xgpio.h"
 
 #define GPIO_DEVICE_ID	XPAR_GPIO_0_DEVICE_ID
-
 #define	PIN_SERVO_COM	0x01
 #define PIN_LIDAR_EN	0x02
 #define PIN_TURRET_DYNAMIXEL 0x04

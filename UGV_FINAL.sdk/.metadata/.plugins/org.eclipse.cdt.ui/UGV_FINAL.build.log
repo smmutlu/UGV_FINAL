@@ -1,4 +1,4 @@
-15:40:47 **** Auto Build of configuration Debug for project UGV_FINAL ****
+15:48:21 **** Auto Build of configuration Debug for project UGV_FINAL ****
 make pre-build main-build 
 a9-linaro-pre-build-step
 ' '
@@ -13,7 +13,7 @@ arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcp
  char *replies = reply;
                  ^~~~~
 ../src/helloworld.c: In function 'get_checksum':
-../src/helloworld.c:1105:9: warning: passing argument 1 of 'strcpy' makes pointer from integer without a cast [-Wint-conversion]
+../src/helloworld.c:1108:9: warning: passing argument 1 of 'strcpy' makes pointer from integer without a cast [-Wint-conversion]
   strcpy(digit,new);
          ^~~~~
 In file included from c:\xilinx\sdk\2017.4\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\ctype.h:4:0,
@@ -35,6 +35,11 @@ At top level:
                      ~~^~~
 'Finished building: ../src/helloworld.c'
 ' '
+'Building file: ../src/mygpio.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/mygpio.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../UGV_FINAL_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/mygpio.d" -MT"src/mygpio.o" -o "src/mygpio.o" "../src/mygpio.c"
+'Finished building: ../src/mygpio.c'
+' '
 'Building target: UGV_FINAL.elf'
 'Invoking: ARM v7 gcc linker'
 arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../UGV_FINAL_bsp/ps7_cortexa9_0/lib -o "UGV_FINAL.elf"  ./src/helloworld.o ./src/mygpio.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
@@ -43,9 +48,9 @@ arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=non
 'Invoking: ARM v7 Print Size'
 arm-none-eabi-size UGV_FINAL.elf  |tee "UGV_FINAL.elf.size"
    text	   data	    bss	    dec	    hex	filename
-  41260	   2820	  23064	  67144	  10648	UGV_FINAL.elf
+  41328	   2820	  23064	  67212	  1068c	UGV_FINAL.elf
 'Finished building: UGV_FINAL.elf.size'
 ' '
 
-15:40:48 Build Finished (took 1s.338ms)
+15:48:23 Build Finished (took 1s.710ms)
 
