@@ -3760,3 +3760,56 @@ arm-none-eabi-size UGV_FINAL.elf  |tee "UGV_FINAL.elf.size"
   41328	   2820	  23064	  67212	  1068c	UGV_FINAL.elf
 'Finished building: UGV_FINAL.elf.size'
 ' '
+15:48:21 **** Auto Build of configuration Debug for project UGV_FINAL ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../UGV_FINAL_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c:147:45: warning: data definition has no type or storage class
+ int turretServoPosition = 1,turretCWLimit=0;turretCCWLimit;
+                                             ^~~~~~~~~~~~~~
+../src/helloworld.c:147:45: warning: type defaults to 'int' in declaration of 'turretCCWLimit' [-Wimplicit-int]
+../src/helloworld.c:152:17: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+ char *replies = reply;
+                 ^~~~~
+../src/helloworld.c: In function 'get_checksum':
+../src/helloworld.c:1108:9: warning: passing argument 1 of 'strcpy' makes pointer from integer without a cast [-Wint-conversion]
+  strcpy(digit,new);
+         ^~~~~
+In file included from c:\xilinx\sdk\2017.4\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\ctype.h:4:0,
+                 from ../../UGV_FINAL_bsp/ps7_cortexa9_0/include/xil_printf.h:8,
+                 from ../../UGV_FINAL_bsp/ps7_cortexa9_0/include/xil_io.h:65,
+                 from ../../UGV_FINAL_bsp/ps7_cortexa9_0/include/xuartps_hw.h:73,
+                 from ../../UGV_FINAL_bsp/ps7_cortexa9_0/include/xuartps.h:188,
+                 from ../src/helloworld.c:15:
+c:\xilinx\sdk\2017.4\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\string.h:30:8: note: expected 'char * restrict' but argument is of type 'char'
+ char  *_EXFUN(strcpy,(char *__restrict, const char *__restrict));
+        ^
+At top level:
+../src/helloworld.c:526:13: warning: 'UartLiteDisableIntrSystem' defined but not used [-Wunused-function]
+ static void UartLiteDisableIntrSystem(INTC *IntcInstancePtr,
+             ^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/helloworld.c: In function 'Handler':
+../src/helloworld.c:743:23: warning: 'cs' may be used uninitialized in this function [-Wmaybe-uninitialized]
+      if(checkSum != cs[0])
+                     ~~^~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building file: ../src/mygpio.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/mygpio.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../UGV_FINAL_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/mygpio.d" -MT"src/mygpio.o" -o "src/mygpio.o" "../src/mygpio.c"
+'Finished building: ../src/mygpio.c'
+' '
+'Building target: UGV_FINAL.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../UGV_FINAL_bsp/ps7_cortexa9_0/lib -o "UGV_FINAL.elf"  ./src/helloworld.o ./src/mygpio.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: UGV_FINAL.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size UGV_FINAL.elf  |tee "UGV_FINAL.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  41328	   2820	  23064	  67212	  1068c	UGV_FINAL.elf
+'Finished building: UGV_FINAL.elf.size'
+' '
